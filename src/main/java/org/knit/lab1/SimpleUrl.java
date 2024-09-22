@@ -7,18 +7,25 @@ public class SimpleUrl {
     private String siteName;
     private String webPageName;
     private String webPageExtention;
-    private String UrlValue = "https://test.ru/test/1072/page.jsp?intParam=12345&doubleParam=3.14&textParameter=someText";
+    private String urlValue;
+    private int intParam;
+    private double doubleParam;
+    private String textParameter;
+    private int webPageNumber;
 
 
-
-    public SimpleUrl(String protocol, String address, String domainZone, String siteName, String webPageName, String webPageExtention, String UrlValue) {
-        this.protocol = protocol;
-        this.address = address;
-        this.domainZone = domainZone;
-        this.siteName = siteName;
-        this.webPageName = webPageName;
-        this.webPageExtention = webPageExtention;
-        this.UrlValue = UrlValue;
+    public SimpleUrl(String urlValue) {
+        this.urlValue = urlValue;
+        this.protocol = urlValue.split(":")[0];
+        this.address = urlValue.split("/")[0];
+        this.domainZone = urlValue.split("/")[2].substring(urlValue.split("/")[2].indexOf(".") + 1);
+        this.siteName = urlValue.split("/")[3];
+        this.webPageNumber = Integer.parseInt(urlValue.split("/")[4]);
+        this.webPageName = urlValue.split("/")[5].substring(0, urlValue.split("/")[5].indexOf("?"));
+        this.webPageExtention = this.webPageName.split("\\.")[1];
+        this.intParam = Integer.parseInt(urlValue.split("/")[5].substring(urlValue.split("/")[5].indexOf("intParam") + 9, urlValue.split("/")[5].indexOf("&")));
+        this.doubleParam = Double.parseDouble(urlValue.split("&")[1].split("=")[1]);
+        this.textParameter = urlValue.split("&")[2].split("=")[1];
 
     }
 
@@ -40,6 +47,38 @@ public class SimpleUrl {
 
     public String getDomainZone() {
         return domainZone;
+    }
+
+    public int getIntParam() {
+        return intParam;
+    }
+
+    public void setIntParam(int intParam) {
+        this.intParam = intParam;
+    }
+
+    public double getDoubleParam() {
+        return doubleParam;
+    }
+
+    public String getTextParameter() {
+        return textParameter;
+    }
+
+    public void setTextParameter(String textParameter) {
+        this.textParameter = textParameter;
+    }
+
+    public void setDoubleParam(double doubleParam) {
+        this.doubleParam = doubleParam;
+    }
+
+    public int getWebPageNumber() {
+        return webPageNumber;
+    }
+
+    public void setWebPageNumber(int webPageNumber) {
+        this.webPageNumber = webPageNumber;
     }
 
     public void setDomainZone(String domainZone) {
@@ -71,21 +110,26 @@ public class SimpleUrl {
     }
 
     public String getUrlValue() {
-        return UrlValue;
+        return urlValue;
     }
 
     public void setUrlValue(String urlValue) {
-        UrlValue = urlValue;
+        urlValue = urlValue;
     }
 
     @Override
     public String toString() {
-        return "protocol = " + protocol +
+        return "url = " + urlValue +
+                "\nprotocol = " + protocol +
                 "\naddress = " + address +
                 "\ndomainZone = " + domainZone +
                 "\nsiteName = " + siteName +
                 "\nwebpageName = " + webPageName +
-                "\nwebPageExtention = " + webPageName;
+                "\nwebPageExtention = " + webPageName +
+                "\nwebpageNumber = " + webPageNumber +
+                "\nintParam" + intParam +
+                "\ndoubleParam = " + doubleParam +
+                "\ntextParameter = " + textParameter;
     }
 
 }

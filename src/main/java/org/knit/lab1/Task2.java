@@ -27,10 +27,12 @@ public class Task2 {
          * urlValue.split(":");
          */
 
-        //todo create class SimpleUrl()
-        // SimpleUrl url= new SimpleUrl();
-        // url.setAddress(address);
-        // url.setProtocol(protocol)
-        // System.out.println(url);
+//        todo create class SimpleUrl()
+//         SimpleUrl url= new SimpleUrl();
+//         url.setAddress(address);
+//         url.setProtocol(protocol)
+//         System.out.println(url);
+        SimpleUrl url = new SimpleUrl(urlValue);
+        System.out.print(url);
     }
 }
