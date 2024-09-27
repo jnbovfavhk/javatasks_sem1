@@ -1,4 +1,4 @@
-package org.knit.lab1;
+package org.knit.jnbovfavhk.lab1;
 
 public class SimpleUrl {
     private String protocol;
