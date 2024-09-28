@@ -1,4 +1,4 @@
-package org.knit.lab1;
+package org.knit.jnbovfavhk.lab1;
 
 /***
  * Задача 1
@@ -22,7 +22,7 @@ public class Task1 {
 
     public void execute() {
         for (int i = 1; i <= 100; i++) {
-            System.out.print((i % 10 != 0) ? (Integer.toString(i) + ", ") : (Integer.toString(i) + "\n"));
+            System.out.print((i % 10 != 0) ? (i + ", ") : (i + "\n"));
         }
     }
 }
