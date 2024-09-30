@@ -22,7 +22,7 @@ public class Task1 {
 
     public void execute() {
         for (int i = 1; i <= 100; i++) {
-            System.out.print((i % 10 != 0) ? (Integer.toString(i) + ", ") : (Integer.toString(i) + "\n"));
+            System.out.print((i % 10 != 0) ? (i + ", ") : (i + "\n"));
         }
     }
 }

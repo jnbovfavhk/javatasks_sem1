@@ -7,7 +7,7 @@ public class SimpleUrl {
     private String siteName;
     private String webPageName;
     private String webPageExtention;
-    private String urlValue;
+    public String urlValue;
     private int intParam;
     private double doubleParam;
     private String textParameter;
