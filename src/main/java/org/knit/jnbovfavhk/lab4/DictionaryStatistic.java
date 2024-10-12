@@ -43,13 +43,13 @@ public class DictionaryStatistic {
             alphabet += (char)i;
         }
         String joinedString = joiner.toString();
-        int[] frequency = new int[alphabet.length()];
+        frequency = new int[alphabet.length()];
+
         for (int i = 0; i < alphabet.length(); i++) {
             // int finalI = i;
              // frequency[i] = joinedString.chars().filter(c -> c == alphabet.charAt(finalI)).count();
             String a = String.valueOf(alphabet.charAt(i));
             frequency[i] = joinedString.split(a).length - 1;
-
         }
     }
 
@@ -74,7 +74,11 @@ public class DictionaryStatistic {
     // Kоличество встречающихся букв
     public void printSymbolsStat() {
         for (int i = 0; i < alphabet.length(); i++) {
-            System.out.printf("%s - %s\n", alphabet.charAt(i), frequency[i]);
+            System.out.printf("%s - %d\n", alphabet.charAt(i), frequency[i]);
         }
+    }
+
+    public int getPolindrom() {
+        return polindrom;
     }
 }
