@@ -5,17 +5,16 @@ public class Check2string {
         if (word.length() > userword.length()) {
             return false;
         }
-        char[] s1 = word.toCharArray();
-        char[] us2 = userword.toCharArray();
+        char[] word1 = word.toCharArray();
+        char[] userword1 = userword.toCharArray();
         int k = 0;
-        for (int i = 0; i < s1.length; i++) {
-            for (int j = 0; j < us2.length; j++) {
-                if (k == s1.length) {
+        for (int i = 0; i < word1.length; i++) {
+            for (int j = 0; j < userword1.length; j++) {
+                if (k == word1.length) {
                     return true;
                 }
-                if (s1[i] == us2[j]) {
-                    s1[i] = 0;
-                    us2[j] =0;
+                if (word1[i] == userword1[j]) {
+                    userword1[j] = 0;
                     k++;
                 }
             }
