@@ -1,6 +1,5 @@
 package org.knit.jnbovfavhk.lab9;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 public class Task14 {
