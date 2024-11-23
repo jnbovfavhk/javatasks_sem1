@@ -9,46 +9,47 @@ public class Task3 {
         goCalculator();
     }
     public void goCalculator() {
-        System.out.println("Введите первое число(чтобы выйти напишите exit)");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
-        if (input.equals("exit")) {
-            return;
-        }
-        double a = Double.parseDouble(input);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Введите первое число(чтобы выйти напишите exit)");
 
-        System.out.println("Введите действие(+, -, *, /)");
-        String operation = scanner.next();
+            String input = scanner.nextLine();
+            if (input.equals("exit")) {
+                return;
+            }
+            double a = Double.parseDouble(input);
 
-        System.out.println("Введите второе число");
-        double b = scanner.nextDouble();
+            System.out.println("Введите действие(+, -, *, /)");
+            String operation = scanner.next();
 
-        switch (operation) {
-            case "+":
-                System.out.println("Ответ: " + Calculator.add(a, b));
-                goCalculator();
-                break;
-            case "-":
-                System.out.println("Ответ: " + Calculator.substract(a, b));
-                goCalculator();
-                break;
-            case "*":
-                System.out.println("Ответ: " + Calculator.multiply(a, b));
-                goCalculator();
-                break;
-            case "/":
-                if (b == 0) {
-                    System.out.println("Не делите на ноль");
-                }
-                else {
-                    System.out.println("Ответ: " + Calculator.divide(a, b));
-                }
-                goCalculator();
-                break;
-            default:
-                System.out.println("Такую операцию калькулятор не поддерживает, попробуйте другую");
-                goCalculator();
-                break;
+            System.out.println("Введите второе число");
+            double b = scanner.nextDouble();
+
+            switch (operation) {
+                case "+":
+                    System.out.println("Ответ: " + Calculator.add(a, b));
+                    goCalculator();
+                    break;
+                case "-":
+                    System.out.println("Ответ: " + Calculator.substract(a, b));
+                    goCalculator();
+                    break;
+                case "*":
+                    System.out.println("Ответ: " + Calculator.multiply(a, b));
+                    goCalculator();
+                    break;
+                case "/":
+                    if (b == 0) {
+                        System.out.println("Не делите на ноль");
+                    } else {
+                        System.out.println("Ответ: " + Calculator.divide(a, b));
+                    }
+                    goCalculator();
+                    break;
+                default:
+                    System.out.println("Такую операцию калькулятор не поддерживает, попробуйте другую");
+                    goCalculator();
+                    break;
+            }
         }
     }
 }

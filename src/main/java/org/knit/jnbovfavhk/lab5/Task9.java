@@ -40,6 +40,7 @@ public class Task9 {
             }
 
         }
+        scanner.close();
         System.out.printf("Завершено. Вы успели написать %s слов за минуту\nВсего слов было: %s\nВаша скорость письма: %s символов в секунду", correctCounter, wordsCounter, symbolsCounter/60);
     }
 
