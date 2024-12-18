@@ -8,7 +8,7 @@ public class Task10 {
 
     public static void execute() throws FileNotFoundException {
         Random random = new Random();
-        Scanner scannerForData = new Scanner(new File("C:\\Users\\ilyab\\IdeaProjects\\javatasks\\resources\\dictionary.txt"));
+        Scanner scannerForData = new Scanner(new File("C:\\Users\\belonozhkoin\\IdeaProjects\\javatasks\\resources\\dictionary.txt"));
         List<String> possibleWords = new ArrayList<>();
         while (scannerForData.hasNext()) {
             possibleWords.add(scannerForData.next());
@@ -24,7 +24,6 @@ public class Task10 {
 
             for (int i = 0; i < pickedWord.length(); i++) {
                 System.out.print(solvedLetters.get(i));
-
             }
             System.out.println("\nВведите букву");
 
@@ -39,8 +38,6 @@ public class Task10 {
                 }
             }
 
-
-            System.out.println(inputString.charAt(0));
             if (pickedWord.contains(String.valueOf(inputString.charAt(0)))) {
                 for (int i = 0; i < pickedWord.length(); i++) {
                     if (inputString.charAt(0) == pickedWord.charAt(i)) {
