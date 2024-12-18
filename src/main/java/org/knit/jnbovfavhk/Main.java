@@ -8,6 +8,6 @@ public class Main {
 //        org.knit.jnbovfavhk.lab2.Main.main();
 //        org.knit.jnbovfavhk.lab5.Main.main();
 //        org.knit.jnbovfavhk.lab9.Main.main();
-        org.knit.jnbovfavhk.lab6.Main.main();
+        org.knit.jnbovfavhk.lab7.Main.main();
     }
 }
