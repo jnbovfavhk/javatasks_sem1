@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main() throws FileNotFoundException {
+        Task10.execute();
         Task11.execute();
     }
 }

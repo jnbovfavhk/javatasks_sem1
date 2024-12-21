@@ -6,29 +6,31 @@ import java.util.List;
 
 public class UserService {
 
-    public static void registerUser(String name, String email) throws SQLException {
-        UserDAOImpl dao = new UserDAOImpl();
-        if (dao.emailExists(email)) {
+
+    private final UserDAO userDAO;
+
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    public void registerUser(String name, String email) throws SQLException {
+        if (userDAO.emailExists(email)) {
             System.out.println("Пользователь с такой почтой уже зарегистрирован");
         } else {
-            dao.create(new User(name, email));
+            userDAO.create(new User(name, email));
         }
     }
 
-    public static List<User> listAllUsers() throws SQLException {
-        UserDAOImpl dao = new UserDAOImpl();
-        return dao.findAll();
+    public List<User> listAllUsers() throws SQLException {
+        return userDAO.findAll();
     }
 
-    public static void deleteUser(String email) throws SQLException {
-        UserDAOImpl dao = new UserDAOImpl();
-        dao.delete(email);
+    public  void deleteUser(String email) throws SQLException {
+        userDAO.delete(email);
     }
 
-    public static void updateUser(String newName, String newEmail) throws SQLException {
-        UserDAOImpl dao = new UserDAOImpl();
+    public void updateUser(String newName, String newEmail) throws SQLException {
         User user = new User(newName, newEmail);
-
-        dao.update(user);
+        userDAO.update(user);
     }
 }

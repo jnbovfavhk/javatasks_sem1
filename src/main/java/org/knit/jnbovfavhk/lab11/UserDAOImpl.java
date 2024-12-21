@@ -11,7 +11,7 @@ public class UserDAOImpl implements UserDAO{
     private final Connection connection;
 
     public UserDAOImpl() throws SQLException {
-        this.connection = DatabaseConnection.getConnection();
+        this.connection = DataBaseConnection.getConnection();
     }
 
     @Override

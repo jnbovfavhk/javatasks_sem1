@@ -41,7 +41,9 @@ public class Task13 {
 
                 case "3":
                     try (ObjectOutputStream outputFile = new ObjectOutputStream(new FileOutputStream("resources/users_data_for_task13.ser"))) {
-
+                        for (User user : listOfUsers) {
+                            System.out.println(user);
+                        }
                         outputFile.writeObject(listOfUsers);
 
                         System.out.println("Успешно записано");
@@ -65,7 +67,8 @@ public class Task13 {
                         System.out.println("Успешно считано");
                         break;
                     } catch (IOException | ClassNotFoundException e) {
-                        throw new RuntimeException(e);
+                        System.out.println("В файле ничего нет");
+                        break;
                     }
 
                 case "5":
