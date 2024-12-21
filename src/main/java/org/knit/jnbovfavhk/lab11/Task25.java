@@ -14,7 +14,7 @@ public class Task25 {
         String pathString = scanner.next();
         Path path = Path.of(pathString);
 
-        Checking50MBFileVisitor fileVisitor = new Checking50MBFileVisitor();
+        CheckingSizeFileVisitor fileVisitor = new CheckingSizeFileVisitor();
         Files.walkFileTree(path, fileVisitor);
 
         if (fileVisitor.isAllFilesUnder50MB()) {

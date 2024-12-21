@@ -8,8 +8,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 
-public class Checking50MBFileVisitor implements FileVisitor<Path> {
+public class CheckingSizeFileVisitor implements FileVisitor<Path> {
     private boolean allFilesUnder50MB = true;
+    private final int sizeOfFile; //default value
+
+    public CheckingSizeFileVisitor() {
+        sizeOfFile = 50 * 1024 * 1024;
+    }
+
+    public CheckingSizeFileVisitor(int sizeOfFile) {
+        this.sizeOfFile = sizeOfFile;
+    }
 
     @Override
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
@@ -26,9 +35,9 @@ public class Checking50MBFileVisitor implements FileVisitor<Path> {
                 symbol = reader.read();
             }
 
-            int sizeOf50MB = 50 * 1024 * 1024;
 
-            if (countOfBytes < sizeOf50MB) {
+
+            if (countOfBytes < sizeOfFile) {
                 return FileVisitResult.CONTINUE;
             } else {
                 allFilesUnder50MB = false;
