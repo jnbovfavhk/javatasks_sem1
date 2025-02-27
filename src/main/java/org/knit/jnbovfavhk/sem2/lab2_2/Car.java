@@ -1,6 +1,6 @@
 package org.knit.jnbovfavhk.sem2.lab2_2;
 
-public class Car extends Thread {
+public class Car extends Thread implements Machine{
 
     private int fuel;
     private final GasStation gasStation;
@@ -26,5 +26,9 @@ public class Car extends Thread {
             fuel = 50;
         }
 
+    }
+
+    public Car() {
+        gasStation = null;
     }
 }

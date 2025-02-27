@@ -5,14 +5,14 @@ public class GasStation {
 
 
     public synchronized void fillUp(Car car) throws InterruptedException {
-        while (occupiedStation >= 2) {
+        while (occupiedStation >= 3) {
             wait();
         }
         occupiedStation++;
         System.out.println(car.getName() + " заправляется... Занятых станций: " + occupiedStation);
 
         car.increaseFuel();
-        Thread.sleep(500);
+        Thread.sleep(1000);
 
         occupiedStation--;
         notifyAll();
