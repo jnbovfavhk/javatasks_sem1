@@ -1,6 +1,6 @@
 package org.knit.jnbovfavhk.sem1.lab9;
 
-enum TrafficLight {
+public enum TrafficLight {
     RED("GREEN"),
     GREEN("YELLOW"),
     YELLOW("RED");
