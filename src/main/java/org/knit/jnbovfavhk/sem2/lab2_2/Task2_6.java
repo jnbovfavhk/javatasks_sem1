@@ -11,22 +11,23 @@ public class Task2_6 {
     boolean trainIsGoing = false;
 
     public static void execute() {
-        ExecutorService executor = Executors.newFixedThreadPool(5);
+        ExecutorService executor = Executors.newFixedThreadPool(1);
         Task2_6 task = new Task2_6();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
         Train train = new Train();
-        scheduler.schedule(() -> {
+
+        scheduler.scheduleAtFixedRate(() -> {
             try {
                 task.goThroughRailway(train);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }, 3, TimeUnit.SECONDS);
+        }, 4, 4, TimeUnit.SECONDS);
 
 
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 8; i++) {
             Car car = new Car();
             executor.submit(() -> {
                 try {
@@ -36,9 +37,10 @@ public class Task2_6 {
                 }
             });
         }
+        scheduler.schedule(scheduler::shutdown, 15, TimeUnit.SECONDS);
 
-        scheduler.shutdown();
         executor.shutdown();
+
 
 
     }
@@ -48,13 +50,19 @@ public class Task2_6 {
         if (trainIsGoing) {
             wait();
         }
+        System.out.println(machine + " проезжает через железнодорожные пути");
         if (machine.getClass().equals(Train.class)){
             trainIsGoing = true;
+
+            sleep(1000);
+
         }
 
-        System.out.println(machine + " проезжает через железнодорожные пути");
-        sleep(2000);
+
+        sleep(1000);
         trainIsGoing = false;
         notifyAll();
     }
+
+
 }

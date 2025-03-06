@@ -1,25 +1,32 @@
 package org.knit.jnbovfavhk.sem2.lab2_2;
 
+import java.util.concurrent.BlockingQueue;
+
 import static java.lang.Thread.sleep;
 
-public class Producer extends Thread{
-    // склад товаров
-    private final Task2_7 warehouse;
+class Producer extends Thread {
+    private final BlockingQueue<Integer> queue;
 
-    public Producer(Task2_7 warehouse) {
-        this.warehouse = warehouse;
+    public Producer(BlockingQueue<Integer> queue) {
+        this.queue = queue;
     }
 
     @Override
     public void run() {
         try {
-            for (int i = 0; i < 7; i++) {
-                warehouse.produce();
-                sleep(200);
+            for (int i = 1; i < 10; i++) {
+                produce();
             }
-
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
         }
+    }
+
+    public synchronized void produce() throws InterruptedException {
+
+        queue.put(1); // Ждет, если очередь заполнена
+        System.out.println("Произведен товар. Всего на складе: " + queue.size());
+        Thread.sleep(700);
+
     }
 }

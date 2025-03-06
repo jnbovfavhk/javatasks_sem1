@@ -1,24 +1,25 @@
 package org.knit.jnbovfavhk.sem2.lab2_2;
 
+import java.util.concurrent.Semaphore;
+
 import static java.lang.Thread.sleep;
 
 public class GasStation {
-    private volatile int occupiedStation = 0;
+    private final Semaphore semaphore = new Semaphore(2);
 
 
-    public synchronized void fillUp(Car car) throws InterruptedException {
-        while (occupiedStation > 1) {
-            System.out.println("occ "+ occupiedStation);
-            wait();
-        }
-        occupiedStation++;
-        System.out.println(car.getName() + " заправляется... Занятых станций: " + occupiedStation);
+    public void fillUp(Car car) throws InterruptedException {
+        semaphore.acquire();
+
+        System.out.println(car.getName() + " заправляется... Свободных станций: " + semaphore.availablePermits());
 
         car.increaseFuel();
-        sleep(1000);
+        sleep(3000);
 
-        occupiedStation--;
-        notifyAll();
+
+        semaphore.release();
 
     }
+
+
 }

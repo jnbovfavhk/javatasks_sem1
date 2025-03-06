@@ -12,7 +12,6 @@ public class Car extends Thread implements Machine{
     @Override
     public void run() {
         try {
-            System.out.println("start tr "+ this.getName());
             gasStation.fillUp(this);
 
         } catch (InterruptedException e) {
