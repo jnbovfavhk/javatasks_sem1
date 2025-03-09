@@ -15,4 +15,5 @@ public enum TrafficLight {
     public TrafficLight getNext() {
         return TrafficLight.valueOf(nextLight);
     }
+
 }

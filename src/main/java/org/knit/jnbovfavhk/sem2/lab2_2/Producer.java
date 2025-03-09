@@ -2,7 +2,6 @@ package org.knit.jnbovfavhk.sem2.lab2_2;
 
 import java.util.concurrent.BlockingQueue;
 
-import static java.lang.Thread.sleep;
 
 class Producer extends Thread {
     private final BlockingQueue<Integer> queue;
