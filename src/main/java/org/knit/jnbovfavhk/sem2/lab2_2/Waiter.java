@@ -9,10 +9,10 @@ public class Waiter extends Thread{
 
     @Override
     public void run() {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 10; i++) {
             try {
                 restaurant.takeDish();
-                Thread.sleep(800);
+                Thread.sleep(1100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
