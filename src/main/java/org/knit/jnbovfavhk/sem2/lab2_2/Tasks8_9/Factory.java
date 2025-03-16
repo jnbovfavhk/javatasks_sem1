@@ -21,7 +21,7 @@ public class Factory {
         warehouse = new ArrayBlockingQueue<>(10);
     }
 
-    public synchronized void stampBlank() throws InterruptedException {
+    public void stampBlank() throws InterruptedException {
         if (material > 0) {
             material -= 1;
             stampedBlanks.put(1);
@@ -31,13 +31,13 @@ public class Factory {
         }
     }
 
-    public synchronized void assembleDetail() throws InterruptedException {
+    public void assembleDetail() throws InterruptedException {
         stampedBlanks.take();
         uncheckedDetails.put(1);
 
     }
 
-    public synchronized void checkDetail() throws InterruptedException {
+    public void checkDetail() throws InterruptedException {
         uncheckedDetails.take();
         warehouse.put(1);
 

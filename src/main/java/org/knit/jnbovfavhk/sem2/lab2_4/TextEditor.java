@@ -6,12 +6,15 @@ import java.io.*;
 import java.nio.file.Path;
 
 public class TextEditor {
-    private Path path;
+    private final Path path;
     private String text;
-    private String name;
+    private final String name;
 
     public TextEditor(String name, String text) {
-        this.path = Path.of("C:\\Users\\belonozhkoin\\IdeaProjects\\javatasks\\src\\main\\java\\org\\knit\\jnbovfavhk\\sem2\\lab2_4" + name);
+
+        this.path = Path.of("src/main/java/org/knit/jnbovfavhk/sem2/lab2_4/" + name);
+//        для сгу
+//        this.path = Path.of("C:\\Users\\belonozhkoin\\IdeaProjects\\javatasks\\src\\main\\java\\org\\knit\\jnbovfavhk\\sem2\\lab2_4\\" + name);
         this.text = text;
         this.name = name;
     }
@@ -19,7 +22,7 @@ public class TextEditor {
 
     public void editText(String newText) {
         this.text = newText;
-        save();
+        saveToFile();
     }
 
 
@@ -33,15 +36,19 @@ public class TextEditor {
 
     public void restore(Memento memento) {
         this.text = memento.getText();
-        save();
+        saveToFile();
     }
 
-    public void save() {
-        try (FileOutputStream file = new FileOutputStream(path.toString())) {
-            ObjectOutputStream out = new ObjectOutputStream(file);
-            out.writeObject(text);
+    private void saveToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path.toString()))) {
+
+            writer.write(text);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException();
         }
+    }
+
+    public String getText() {
+        return text;
     }
 }
