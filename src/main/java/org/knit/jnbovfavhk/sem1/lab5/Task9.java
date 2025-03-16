@@ -1,4 +1,6 @@
 package org.knit.jnbovfavhk.sem1.lab5;
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -6,7 +8,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-
+@TaskDescription(number = 1, description = "Создайте консольное приложение, которое в течение минуты," +
+        " берет случайные слова из списка и предлагает пользователю их ввести.\n" +
+        "\n" +
+        "Приложение должно засекать время на 1 минуту. Через минуту последнее введенное слово не учитывается. " +
+        "Если слово совпало с предложенным, то увеличиваем счетчик на 1. Через минуту подводим итог.")
 public class Task9 {
     public static void execute() throws FileNotFoundException {
 

@@ -2,10 +2,12 @@ package org.knit.jnbovfavhk.sem1.lab5;
 
 
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
-
+@TaskDescription(number = 8, description = "Переопределение методов объекта, работа с comparator")
 public class Task8 {
 
     public static void execute() {
@@ -19,6 +21,7 @@ public class Task8 {
         }
         Arrays.sort(items, Comparator.comparing(ShopItem::getName)
                 .thenComparing(ShopItem::getPrice));
+
         int k = 1;
         int mk = 0;
         for (int j = 0; j < 99; j++) {

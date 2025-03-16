@@ -1,14 +1,17 @@
 package org.knit.jnbovfavhk.sem1.lab2;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.util.Scanner;
 
+@TaskDescription(number = 3, description = "Класс консольного калькулятора")
 public class Task3 {
 
-    public void execute() {
+    public static void execute() {
         System.out.println("Реализация консольного калькулятора");
         goCalculator();
     }
-    public void goCalculator() {
+    public static void goCalculator() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Введите первое число(чтобы выйти напишите exit)");
 

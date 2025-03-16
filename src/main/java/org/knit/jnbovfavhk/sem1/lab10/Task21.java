@@ -1,10 +1,15 @@
 package org.knit.jnbovfavhk.sem1.lab10;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
+@TaskDescription(number = 21, description = "Напишите универсальный метод filter, который " +
+        "принимает список элементов и предикат (интерфейс Predicate<T>). " +
+        "Метод должен возвращать новый список, содержащий только те элементы, которые удовлетворяют предикату.")
 public class Task21 {
     public static void execute() {
         List<String> words = Arrays.asList("apple", "banana", "cherry");

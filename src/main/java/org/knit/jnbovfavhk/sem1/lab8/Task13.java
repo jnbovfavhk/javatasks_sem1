@@ -1,10 +1,14 @@
 package org.knit.jnbovfavhk.sem1.lab8;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@TaskDescription(number = 13, description = "Создание консольного приложения, которое сохраняет информацию о " +
+        "пользователях в файл и позволяет восстанавливать её при следующем запуске программы.")
 public class Task13 {
     public static void execute() {
         List<User> listOfUsers = new ArrayList<>();

@@ -1,5 +1,9 @@
 package org.knit.jnbovfavhk.sem1.lab10;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
+@TaskDescription(number = 22, description = "Создайте класс Dictionary<K, V>, который будет работать как " +
+        "словарь (ключ-значение). Реализуйте методы для добавления, удаления и получения элементов.")
 public class Task22 {
     public static void execute() {
         Dictionary<String, Integer> dictionary = new Dictionary<>();

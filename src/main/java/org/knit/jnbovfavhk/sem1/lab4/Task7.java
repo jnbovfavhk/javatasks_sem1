@@ -1,4 +1,6 @@
 package org.knit.jnbovfavhk.sem1.lab4;
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -6,10 +8,11 @@ import java.util.Scanner;
 
 import static org.knit.jnbovfavhk.sem1.lab4.Check2string.check;
 
-
+@TaskDescription(number = 7, description = "Создание класса-статистики словаря + из введенного в консоль слова " +
+        "вывести все слова из словаря, которые состоят из тех же букв")
 public class Task7 {
 
-    public void execute() throws FileNotFoundException {
+    public static void execute() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("resources/dictionary.txt"));
         String[] words = Arrays.stream(scanner.tokens().toArray()).toArray(String[]::new);
         DictionaryStatistic ds = new DictionaryStatistic(words);

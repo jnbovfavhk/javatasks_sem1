@@ -1,5 +1,7 @@
 package org.knit.jnbovfavhk.sem1.lab1;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 /***
  * Задача 1
  * Вывести на экран числа от 1 до 100 через запятую, переходя на новую строку каждые 10 чисел
@@ -18,9 +20,10 @@ package org.knit.jnbovfavhk.sem1.lab1;
  * 91,92,93,94,95,96,97,98,99,100
  *
  ***/
+@TaskDescription(number = 1, description = "Вывести на экран числа от 1 до 100 через запятую, переходя на новую строку каждые 10 чисел")
 public class Task1 {
 
-    public void execute() {
+    public static void execute() {
         for (int i = 1; i <= 100; i++) {
             System.out.print((i % 10 != 0) ? (i + ", ") : (i + "\n"));
         }

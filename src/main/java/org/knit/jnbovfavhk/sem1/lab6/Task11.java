@@ -1,8 +1,13 @@
 package org.knit.jnbovfavhk.sem1.lab6;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.util.Scanner;
 import java.util.TreeSet;
 
+@TaskDescription(number = 1, description = "Создание программы на Java, которая управляет списком студентов с " +
+        "использованием коллекции TreeSet. Программа должна поддерживать функции добавления, удаления, вывода на экран, " +
+        "поиска по имени")
 public class Task11 {
     public static void execute() {
         TreeSet<String> setOfStudents = new TreeSet<String>();

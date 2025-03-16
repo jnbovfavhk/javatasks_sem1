@@ -1,5 +1,9 @@
 package org.knit.jnbovfavhk.sem1.lab10;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
+@TaskDescription(number = 19, description = "Напишите универсальный метод findMax, который " +
+        "принимает массив элементов любого типа, реализующего интерфейс Comparable, и возвращает максимальный элемент.")
 public class Task19 {
     public static void execute() {
         Integer[] ints = {1, 5, 10, -45, 30};

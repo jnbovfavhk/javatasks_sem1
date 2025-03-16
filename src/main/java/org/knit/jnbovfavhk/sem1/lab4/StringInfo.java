@@ -16,8 +16,6 @@ public class StringInfo {
 
         frequency = new int[alphabet.length()];
         for (int i = 0; i < alphabet.length(); i++) {
-            // int finalI = i;
-            // frequency[i] = joinedString.chars().filter(c -> c == alphabet.charAt(finalI)).count();
             String a = String.valueOf(alphabet.charAt(i));
             frequency[i] = string.split(a).length - 1;
         }

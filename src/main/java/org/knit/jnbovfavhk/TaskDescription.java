@@ -1,14 +1,13 @@
 package org.knit.jnbovfavhk;
 
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+
 
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
 public @interface TaskDescription {
     int number();
-    String Description();
+    String description() default "No description";
+    String href() default "No reference provided";// link to source (file, site, ..etc)
 }

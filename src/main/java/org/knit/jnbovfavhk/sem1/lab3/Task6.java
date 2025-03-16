@@ -1,8 +1,11 @@
 package org.knit.jnbovfavhk.sem1.lab3;
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.util.Random;
 
+@TaskDescription(number = 6, description = "Смоделировать персонажей классической 2d RPG", href = "org/knit/jnbovfavhk/sem1/lab3")
 public class Task6 {
-    public void execute() {
+    public static void execute() {
         Mage mage1 = new Mage("Magistranto");
         Warrior warrior1 = new Warrior("borov");
         Priest priest = new Priest("iampriest");

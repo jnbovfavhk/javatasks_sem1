@@ -1,5 +1,7 @@
 package org.knit.jnbovfavhk.sem1.lab1;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 /***
  * Задача 2
  * Создайте класс SimpleUrl
@@ -19,8 +21,10 @@ package org.knit.jnbovfavhk.sem1.lab1;
  * попробуйте с другими URL в сети, подумайте как можно сгруппировать значения.
  *
  */
+@TaskDescription(number = 2, description = "Создать класс, парсящий определенную URL строку + " +
+        "геттеры и сеттеры для его полей")
 public class Task2 {
-    public void execute() {
+    public static void execute() {
 
         String urlValue = "https://test.ru/test/1072/page.jsp?intParam=12345&doubleParam=3.14&textParameter=someText";
         /* tips

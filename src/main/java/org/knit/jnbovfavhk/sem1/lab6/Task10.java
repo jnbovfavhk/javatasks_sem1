@@ -1,9 +1,12 @@
 package org.knit.jnbovfavhk.sem1.lab6;
 
+import org.knit.jnbovfavhk.TaskDescription;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+@TaskDescription(number = 10, description = "Консольная игра 'Виселица'")
 public class Task10 {
 
     public static void execute() throws FileNotFoundException {
