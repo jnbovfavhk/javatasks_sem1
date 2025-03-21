@@ -13,7 +13,7 @@ public class Collector extends Worker implements Runnable {
     public void run() {
         for (int i = 0; i < 10; i++) {
             try {
-                sleep(1000);
+                sleep(random.nextInt(1500) + 1000);
                 factory.assembleDetail();
                 System.out.println("Заготовка " + i + " обработана");
 
